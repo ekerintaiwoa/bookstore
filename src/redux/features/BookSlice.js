@@ -48,6 +48,6 @@ const  bookSlice = createSlice({
 })
 
 
-export const {ordered} = bookSlice.actions;
+export const {ordered,restocked} = bookSlice.actions;
 export default bookSlice.reducer
 
