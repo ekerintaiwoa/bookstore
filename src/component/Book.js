@@ -17,6 +17,7 @@ const unsubscribe =  store.subscribe(()=>{
 
 import React, {useState} from 'react';
 import {useDispatch , useSelector} from "react-redux";
+import {ordered,restocked} from '../redux/features/BookSlice'
 
 const Book = () => {
 
@@ -25,10 +26,16 @@ const Book = () => {
     // get data from Redux Store
 
     let bookState = useSelector((state) => {
-        return state["numberOfBooks"]; 
+          //  name of slice
+       return state["bookred"]
     });
 
-    let {bookNumber} = bookState;
+    let  {numberOfBooks} = bookState;
+
+
+    let orderABook = () => {
+        dispatch(ordered());
+    };
 
 
 
@@ -36,7 +43,9 @@ const Book = () => {
 
             <div>
 
-                    {bookNumber}
+                   <h1> {numberOfBooks}</h1>
+                   <h2> {orderABook}</h2>
+
 
             </div>
 
