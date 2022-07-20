@@ -47,3 +47,7 @@ const  bookSlice = createSlice({
 
 })
 
+
+export const {ordered} = bookSlice.actions;
+export default bookSlice.reducer
+
